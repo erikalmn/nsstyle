@@ -42,17 +42,39 @@ function ready() {
         button.addEventListener('click', addCartClicked);
     }
 
-    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
+    document.getElementsByClassName('btn-buy')[0].addEventListener('click', sendOrder);
 }
 
-function buyButtonClicked() {
-    alert('Seu pedido foi enviado!');
+function sendOrder() {
+    const phone = "5585986659255";
+    const cartContent = document.getElementsByClassName('cart-content')[0];
+    const cartBoxes = cartContent.getElementsByClassName('cart-box');
 
-    var cartContent = document.getElementsByClassName('cart-content')[0];
+    if (cartBoxes.length === 0) {
+        alert("Seu pedido está vazio!");
+        return;
+    }
 
+    let msg = "✨ Olá! Vi esses modelos e tenho interesse em realizar uma encomenda personalizada com algo parecido. Podemos falar? 😊\n\n🛍️ *Itens do meu carrinho:* \n";
+
+    for (let i = 0; i < cartBoxes.length; i++) {
+        const box = cartBoxes[i];
+        const titulo = box.getElementsByClassName('cart-product-title')[0].innerText;
+        const quantidade = box.getElementsByClassName('cart-quantity')[0].value;
+        msg += `• ${titulo} (quantidade: ${quantidade})\n`;
+    }
+
+    const total = document.getElementsByClassName('total-price')[0].innerText;
+    msg += `\n💰 *Total estimado:* ${total}`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+
+    // Limpa o carrinho após o envio
     while (cartContent.hasChildNodes()) {
         cartContent.removeChild(cartContent.firstChild);
-    } updateTotal();
+    }
+    updateTotal();
 }
 
 function quantityChanged(event) {
