@@ -65,16 +65,6 @@ header {
     font-weight: 500;
 }
 
-#ig-icon {
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-#tt-icon {
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
 #cart-icon {
     font-size: 1.8rem;
     cursor: pointer;
@@ -239,10 +229,6 @@ header {
     line-height: 1.6;
 }
 
-.shop {
-    padding: 0 0 3rem;
-}
-
 @media (max-width: 1080px) {
     .about {
         margin-top: 2rem !important;
@@ -312,4 +298,29 @@ header {
 
 .add-cart:hover {
     background: hsl(249, 32%, 17%);
+}
+
+.footer {
+    background-color: #f6f6f6;
+    padding: 2rem 0;
+    text-align: center;
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+    border-top: 1px solid #ddd;
+}
+
+.footer .social-icons {
+    margin-top: 1rem;
+}
+
+.footer .social-icons a {
+    margin: 0 0.5rem;
+    color: #333;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #e91e63; /* Cor rosé exemplo */
 }
