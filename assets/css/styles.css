@@ -65,6 +65,16 @@ header {
     font-weight: 500;
 }
 
+#ig-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#tt-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
 #cart-icon {
     font-size: 1.8rem;
     cursor: pointer;
@@ -191,21 +201,52 @@ header {
     cursor: pointer;
 }
 
-section {
+.about {
+    margin-top: 2rem;
     padding: 4rem 0 3rem;
 }
 
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about-img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 .shop {
-    margin-top: 2rem;
+    padding: 0 0 3rem;
 }
 
 @media (max-width: 1080px) {
-    section {
-        padding: 3rem 0 2rem;
-    }
-
-    .shop {
+    .about {
         margin-top: 2rem !important;
+        padding: 3rem 0 2rem;
     }
 }
 
@@ -214,7 +255,7 @@ section {
         width: 280px;
     }
 
-    .shop {
+    .about {
         margin-top: 1rem !important;
     }
 }
